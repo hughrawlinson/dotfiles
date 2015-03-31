@@ -25,6 +25,7 @@ set gdefault
 set encoding=utf-8 nobomb
 " Change mapleader
 let mapleader=","
+let maplocalleader=","
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
@@ -95,7 +96,7 @@ function! StripWhitespace()
 	call setpos('.', save_cursor)
 	call setreg('/', old_query)
 endfunction
-noremap <leader>ss :call StripWhitespace()<CR>
+"noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
