@@ -1,12 +1,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/hugh/.oh-my-zsh
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="terminalparty"
-EDITOR="emacs"
+export EDITOR="vim"
 
 function loadenv() { cat .env | while read a; do export $a; done }
 
@@ -52,7 +51,7 @@ plugins=(git vi-mode)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$PATH/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:/Users/hugh/Library/Android/sdk/platform-tools"
 export PATH="$PATH:/Users/hugh/Library/Android/sdk/build-tools"
 export PATH="$PATH:/Users/hugh/Library/Android/sdk/tools"
@@ -92,3 +91,8 @@ export NVM_DIR="/Users/hugh/.nvm"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# source ~/.dotfiles/tmuxinator.zsh
+

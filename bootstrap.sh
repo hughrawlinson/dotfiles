@@ -10,4 +10,4 @@ ln -sf $HOME/.dotfiles/.vimrc ~/.vimrc
 ln -sf $HOME/.dotfiles/.zshrc ~/.zshrc
 ln -sf $HOME/.dotfiles/.vim ~/.vim
 ln -sf $HOME/.dotfiles/.oh-my-zsh ~/.oh-my-zsh
-
+ln -sf $HOME/.dotflies/.tmuxinator ~/.tmuxinator
