@@ -95,4 +95,4 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # source ~/.dotfiles/tmuxinator.zsh
-
+alias tmux="TERM=screen-256color-bce tmux"
