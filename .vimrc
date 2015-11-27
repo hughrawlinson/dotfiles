@@ -31,6 +31,7 @@ Plugin 'jceb/vim-orgmode'
 Plugin 'tpope/vim-sensible'
 Plugin 'munshkr/vim-tidal'
 Plugin 'wakatime/vim-wakatime'
+Plugin 'wilsaj/chuck.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,8 +42,6 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 let g:solarized_termtrans=1
-
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
 
 " Make Vim more useful
 set nocompatible
