@@ -1,0 +1,11 @@
+bower@1.7.7
+dependency-check@2.5.1
+greenkeeper@2.6.0
+json@9.0.3
+lingon@2.2.11
+lingon-cli@0.2.3
+meyda@3.0.0
+npm@3.3.12
+npm-check-updates@2.5.7
+surge@0.17.7
+watchify@3.7.0

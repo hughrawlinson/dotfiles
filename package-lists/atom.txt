@@ -1,0 +1,7 @@
+atom-solarized-dark-ui@0.25.0
+emmet@2.3.18
+jshint@1.8.3
+language-babel@2.11.2
+language-viml@0.3.0
+python-yapf@0.9.1
+
