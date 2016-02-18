@@ -19,17 +19,13 @@ Plugin 'walm/jshint.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-classpath'
-Plugin 'guns/vim-clojure-static'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-fugitive'
 Plugin 'pangloss/vim-javascript'
 Plugin 'vim-misc'
 Plugin 'xolox/vim-notes'
-Plugin 'jceb/vim-orgmode'
 Plugin 'tpope/vim-sensible'
-Plugin 'munshkr/vim-tidal'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'wilsaj/chuck.vim'
 
@@ -42,6 +38,7 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 let g:solarized_termtrans=1
+let g:solarized_termcolors=256
 
 " Make Vim more useful
 set nocompatible
@@ -152,4 +149,3 @@ let g:airline_theme='dark'
 
 set shiftwidth=2
 set tabstop=2
-
