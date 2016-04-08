@@ -1,4 +1,3 @@
-set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -15,7 +14,6 @@ Plugin 'gmarik/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-scripts/Emmet.vim'
-Plugin 'walm/jshint.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-classpath'
@@ -28,6 +26,8 @@ Plugin 'xolox/vim-notes'
 Plugin 'tpope/vim-sensible'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'wilsaj/chuck.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'terryma/vim-multiple-cursors'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -40,8 +40,16 @@ colorscheme solarized
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_next_key='<C-d>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
 " Make Vim more useful
-set nocompatible
+set nocp
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
 " Enhance command-line completion
@@ -58,9 +66,9 @@ set gdefault
 set encoding=utf-8 nobomb
 " Change mapleader
 let mapleader=","
-let maplocalleader=","
+let maplocalleader="\\"
 " Don’t add empty newlines at the end of files
-set binary
+set binary 
 set noeol
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
@@ -85,7 +93,7 @@ syntax on
 " Highlight current line
 set cursorline
 " Make tabs as wide as two spaces
-set tabstop=2
+set tabstop=2 shiftwidth=2 expandtab
 " Show “invisible” characters
 "set lcs=trail:·,eol:¬,nbsp:_
 "set list
@@ -113,6 +121,7 @@ set showmode
 set title
 " Show the (partial) command as it’s being typed
 set showcmd
+set noautoindent
 " Use relative line numbers
 if exists("&relativenumber")
 	set relativenumber
@@ -129,10 +138,10 @@ function! StripWhitespace()
 	call setpos('.', save_cursor)
 	call setreg('/', old_query)
 endfunction
-"noremap <leader>ss :call StripWhitespace()<CR>
+noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
-
+noremap <leader>a :NERDTreeToggle<CR>
 " Automatic commands
 if has("autocmd")
 	" Enable file type detection
@@ -147,5 +156,25 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='dark'
 
-set shiftwidth=2
-set tabstop=2
+function! PrettifyXML()
+		set ft=xml
+		:%s/></>\r</g
+		:0
+		:norm =G
+endfunction
+
+if exists('+colorcolumn')
+	set colorcolumn=80
+else
+	au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+

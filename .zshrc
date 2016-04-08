@@ -7,11 +7,12 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git vi-mode)
 
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$PATH:/Users/hugh/Library/Android/sdk/platform-tools"
-export PATH="$PATH:/Users/hugh/Library/Android/sdk/build-tools"
-export PATH="$PATH:/Users/hugh/Library/Android/sdk/tools"
-export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:/usr/local/heroku/bin"
+export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+export PATH="$PATH:$HOME/Library/Android/sdk/build-tools"
+export PATH="$PATH:$HOME/Library/Android/sdk/tools"
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 eval "$(rbenv init -)"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
@@ -32,7 +33,16 @@ export NVM_DIR="/Users/hugh/.nvm"
 #. /Library/Python/2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 alias tmux="tmux -2"
 alias spm='npm --registry http://npm-registry.spotify.net --userconfig ~/.spmrc --always-auth=true'
+alias g='git'
+alias ec='emacsclient -n -a ""'
 eval "$(docker-machine env default)"
 eval "$(hub alias -s)"
+eval "$(grunt --completion=zsh)"
 
 function loadenv() { cat .env | while read a; do export $a; done }
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/hugh/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/hugh/google-cloud-sdk/completion.zsh.inc'
