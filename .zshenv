@@ -8,7 +8,12 @@ export PATH="$PATH:$HOME/.bin"
 export PATH="$PATH:$HOME/.local/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_GB.UTF-8
-export EDITOR='emacsclient -c'
+export EDITOR='ec'
+export ALTERNATE_EDITOR='vim'
 export LESS="-erX"
 export NVM_DIR="/Users/hugh/.nvm"
-
+export ZSH_THEME="agnoster"
+export ENABLE_CORRECTION="true"
+export COMPLETION_WAITING_DOTS="true"
+export ZSH_TMUX_AUTOSTART="true"
+export DEFAULT_USER="hugh"

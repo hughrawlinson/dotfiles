@@ -1,10 +1,7 @@
 export ZSH=/Users/hugh/.oh-my-zsh
 
 # Oh My ZSH
-ZSH_THEME="agnoster"
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
-plugins=(git vi-mode)
+plugins=(git vi-mode common-aliases npm nyan tmux)
 source $ZSH/oh-my-zsh.sh
 
 eval "$(rbenv init -)"
@@ -20,6 +17,7 @@ if which docker-machine > /dev/null; then eval "$(docker-machine env default)"; 
 alias ghci="stack ghci"
 alias ghc="stack ghc"
 alias npm-exec='PATH=$(npm bin):$PATH'
+alias ec="emacsclient --no-wait"
 alias e="$EDITOR"
 
 function loadenv() { cat .env | while read a; do export $a; done }
