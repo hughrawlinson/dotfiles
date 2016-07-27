@@ -1,6 +1,7 @@
 .git
 .DS_Store
-bootstrap.sh
-README.md
-LICENSE-MIT.txt
+*.md
+*.txt
 colors
+scripts
+package-lists
