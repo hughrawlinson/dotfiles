@@ -29,7 +29,10 @@ values."
      git
      markdown
      org
-     javascript
+     elm
+     html
+     php
+     (javascript :variables javascript-disable-tern-port-files nil)
      yaml
      emoji
      rust
@@ -40,10 +43,14 @@ values."
      sql
      games
      osx
+     erc
+     react
+     finance
+     syntax-checking
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;; spell-checking
+     spell-checking
      syntax-checking
      ;; version-control
      )
@@ -51,7 +58,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '( f )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -65,9 +72,9 @@ This function is called at the very startup of Spacemacs initialization
 before layers configuration.
 You should not put any user code in there besides modifying the variable
 values."
-  ;; This setq-default sexp is an exhaustive list of all the supported
-  ;; spacemacs settings.
   (setq-default
+   js2-basic-offset 2
+   js-indent-level 2
    ;; If non nil ELPA repositories are contacted via HTTPS whenever it's
    ;; possible. Set it to nil if you have no way to use HTTPS in your
    ;; environment, otherwise it is strongly recommended to let it set to t.
@@ -249,6 +256,20 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (defun --set-emoji-font (frame)
+    "Adjust the font settings of FRAME so Emacs can display emoji properly."
+    (if (eq system-type 'darwin)
+        ;; For NS/Cocoa
+        (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") frame 'prepend)
+      ;; For Linux
+      (set-fontset-font t 'symbol (font-spec :family "Symbola") frame 'prepend)))
+
+  ;; For when Emacs is started in GUI mode:
+  (--set-emoji-font nil)
+  ;; Hook for when a frame is created with emacsclient
+  ;; see https://www.gnu.org/software/emacs/manual/html_node/elisp/Creating-Frames.html
+  (add-hook 'after-make-frame-functions '--set-emoji-font)
+
   )
 
 (defun dotspacemacs/user-config ()
@@ -257,7 +278,56 @@ This function is called at the very end of Spacemacs initialization after
 layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
-you should place you code here." )
+you should place you code here."
+  (setq-default js2-basic-offset 2)
+  (setq-default js-indent-level 2)
+  (defun my-web-mode-hook ()
+    "Hooks for Web mode."
+    (setq web-mode-markup-indent-offset 2)
+    (setq web-mode-css-indent-offset 2)
+    (setq web-mode-code-indent-offset 2)
+    (setq web-mode-indent-style 2)
+    )
+  (add-hook 'web-mode-hook  'my-web-mode-hook)
+  (add-hook 'js2-mode-hook
+            (defun my-js2-mode-setup ()
+              (flycheck-mode t)
+              (when (executable-find "eslint")
+                (flycheck-select-checker 'javascript-eslint))))
+  (push '("\\.js\\'" . react-mode) auto-mode-alist)
+
+  ;;; Flow (JS) flycheck config (http://flowtype.org)
+  ;; from https://github.com/bodil/emacs.d/blob/master/bodil/bodil-js.el
+  (require 'f)
+  (require 'json)
+  (defun flycheck-parse-flow (output checker buffer)
+    (let ((json-array-type 'list))
+      (let ((o (json-read-from-string output)))
+        (mapcar #'(lambda (errp)
+                    (let ((err (cadr (assoc 'message errp))))
+                      (flycheck-error-new
+                       :line (cdr (assoc 'line err))
+                       :column (cdr (assoc 'start err))
+                       :level 'error
+                       :message (cdr (assoc 'descr err))
+                       :filename (f-relative
+                                  (cdr (assoc 'path err))
+                                  (f-dirname (file-truename
+                                              (buffer-file-name))))
+                       :buffer buffer
+                       :checker checker)))
+                (cdr (assoc 'errors o))))))
+
+  (flycheck-define-checker javascript-flow
+    "Javascript type checking using Flow."
+    :command ("flow" "--json" source-original)
+    :error-parser flycheck-parse-flow
+    :modes react-mode
+    :next-checkers ((error . javascript-eslint))
+    )
+  (add-to-list 'flycheck-checkers 'javascript-flow)
+
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
