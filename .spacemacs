@@ -1,6 +1,5 @@
-;; -*- mode: emacs-lisp -*-
-;; This file is loaded by Spacemacs at startup.
-;; It must be stored in your home directory.
+;; -*- mode: emacs-lisp -*- This file is loaded by Spacemacs at startup. It must
+;; be stored in your home directory.
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
@@ -13,24 +12,34 @@ values."
    '(
      auto-completion
      better-defaults
-     emacs-lisp
-     lua
-     git
-     markdown
      dash
-     haskell
-     swift
-     html
-     javascript
-     erc
-     xkcd
+     elm
      emacs-lisp
      emoji
+     erc
+     finance
+     git
+		 ;; haskell mode is currently broken :(
+     ;; haskell
+     html
      ibuffer
+     javascript
+     lua
+     markdown
      org
+     osx
+     php
+     react
+     rust
+     (shell :variables
+            shell-default-shell 'eshell
+            shell-default-term-shell "/bin/zsh"
+            )
      spell-checking
+     swift
      syntax-checking
      version-control
+     xkcd
 
      ;; private layers
      )
@@ -63,11 +72,12 @@ values."
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes '(solarized-dark
                          solarized-light
-                        )
+                         )
    dotspacemacs-colorize-cursor-according-to-state t
-   dotspacemacs-default-font '("Source Code Pro for Powerline"
+   ;; brew package font-fira-code
+   dotspacemacs-default-font '("Fira Code Retina"
                                :size 12
-                               :weight light
+                               :weight normal
                                :width normal
                                :powerline-scale 1.0)
    dotspacemacs-leader-key "SPC"
@@ -115,6 +125,9 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  ;; don't run an interactive shell while setting path
+  (setq exec-path-from-shell-arguments '("-l"))
   )
 
 (defun dotspacemacs/user-config ()
@@ -125,24 +138,59 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-(setq powerline-default-separator 'nil)
-;; for some reason...
-(spaceline-compile)
-(setq-default
- js2-basic-offset 2
- js-indent-level 2)
-(defun kill-all-dired-buffers ()
-  "Kill all dired buffers."
-  (interactive)
-  (save-excursion
-    (let ((count 0))
-      (dolist (buffer (buffer-list))
-        (set-buffer buffer)
-        (when (equal major-mode 'dired-mode)
-          (setq count (1+ count))
-          (kill-buffer buffer)))
-      (message "Killed %i dired buffer(s)." count))))
-)
+  (setq powerline-default-separator 'nil)
+  ;; for some reason...
+  (spaceline-compile)
+
+  ;; attempt to set emoji font, doesn't currently work
+  (defun --set-emoji-font (frame)
+    "Adjust the font settings of FRAME so Emacs can display emoji properly."
+    (if (eq system-type 'darwin)
+        ;; For NS/Cocoa
+        (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") frame 'prepend)
+      ;; For Linux
+      (set-fontset-font t 'symbol (font-spec :family "Symbola") frame 'prepend)))
+
+  ;; For when Emacs is started in GUI mode:
+  ;;(--set-emoji-font nil)
+  ;; Hook for when a frame is created with emacsclient
+  ;; see https://www.gnu.org/software/emacs/manual/html_node/elisp/Creating-Frames.html
+
+  (add-hook 'after-make-frame-functions '--set-emoji-font)
+
+  ;; Macro for killing all dired buffers
+  (defun kill-all-dired-buffers ()
+    "Kill all dired buffers."
+    (interactive)
+    (save-excursion
+      (let ((count 0))
+        (dolist (buffer (buffer-list))
+          (set-buffer buffer)
+          (when (equal major-mode 'dired-mode)
+            (setq count (1+ count))
+            (kill-buffer buffer)))
+        (message "Killed %i dired buffer(s)." count))))
+
+  ;; Try and make indentation work nicely
+  (setq-default js2-basic-offset 2)
+  (setq-default js-indent-level 2)
+  (defun my-web-mode-hook ()
+    "Hooks for Web mode."
+    (setq web-mode-markup-indent-offset 2)
+    (setq web-mode-css-indent-offset 2)
+    (setq web-mode-code-indent-offset 2)
+    (setq web-mode-indent-style 2)
+    )
+  (add-hook 'web-mode-hook  'my-web-mode-hook)
+
+  ;; Use eslint to lint instead of jshint
+  (add-hook 'js2-mode-hook
+            (defun my-js2-mode-setup ()
+              (flycheck-mode t)
+              (when (executable-find "eslint")
+                (flycheck-select-checker 'javascript-eslint))))
+  (push '("\\.js\\'" . react-mode) auto-mode-alist)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

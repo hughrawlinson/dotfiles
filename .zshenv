@@ -6,14 +6,18 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:/usr/local/heroku/bin"
 export PATH="$PATH:$HOME/.bin"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.cargo/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_GB.UTF-8
 export EDITOR='ec'
 export ALTERNATE_EDITOR='vim'
 export LESS="-erX"
-export NVM_DIR="/Users/hugh/.nvm"
 export ZSH_THEME="agnoster"
 export ENABLE_CORRECTION="true"
 export COMPLETION_WAITING_DOTS="true"
-export ZSH_TMUX_AUTOSTART="true"
+# Not joking, this is how to detect if you're running in emacs exec-path-from-shell
+if [[ $- == *i* && "$PAGER" != "cat" ]]; then; export ZSH_TMUX_AUTOSTART="true"; fi;
 export DEFAULT_USER="hugh"
+#export TERM="xterm-256color"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
