@@ -19,6 +19,7 @@ values."
      erc
      finance
      git
+     github
 		 ;; haskell mode is currently broken :(
      ;; haskell
      html
@@ -63,7 +64,7 @@ values."
    dotspacemacs-elpa-https t
    dotspacemacs-elpa-timeout 5
    dotspacemacs-check-for-update t
-   dotspacemacs-editing-style 'vim
+   dotspacemacs-editing-style 'emacs
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner 'nil
@@ -142,21 +143,22 @@ you should place your code here."
   ;; for some reason...
   (spaceline-compile)
 
-  ;; attempt to set emoji font, doesn't currently work
-  (defun --set-emoji-font (frame)
-    "Adjust the font settings of FRAME so Emacs can display emoji properly."
-    (if (eq system-type 'darwin)
-        ;; For NS/Cocoa
-        (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") frame 'prepend)
-      ;; For Linux
-      (set-fontset-font t 'symbol (font-spec :family "Symbola") frame 'prepend)))
+  (setq company-emoji-insert-unicode t)
 
-  ;; For when Emacs is started in GUI mode:
-  ;;(--set-emoji-font nil)
+  ;; ;; attempt to set emoji font, doesn't currently work
+  ;; (defun --set-emoji-font (frame)
+  ;;   "Adjust the font settings of FRAME so Emacs can display emoji properly."
+  ;;   (if (eq system-type 'darwin)
+  ;;       ;; For NS/Cocoa
+  ;;       (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") frame 'prepend)
+  ;;     ;; For Linux
+  ;;     (set-fontset-font t 'symbol (font-spec :family "Symbola") frame 'prepend)))
+
+  ;; ;; For when Emacs is started in GUI mode:
+  ;; (--set-emoji-font nil)
   ;; Hook for when a frame is created with emacsclient
-  ;; see https://www.gnu.org/software/emacs/manual/html_node/elisp/Creating-Frames.html
 
-  (add-hook 'after-make-frame-functions '--set-emoji-font)
+  ;; (add-hook 'after-make-frame-functions '--set-emoji-font)
 
   ;; Macro for killing all dired buffers
   (defun kill-all-dired-buffers ()
@@ -167,7 +169,7 @@ you should place your code here."
         (dolist (buffer (buffer-list))
           (set-buffer buffer)
           (when (equal major-mode 'dired-mode)
-            (setq count (1+ count))
+            (setq count (1+ count)) 
             (kill-buffer buffer)))
         (message "Killed %i dired buffer(s)." count))))
 

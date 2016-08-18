@@ -1,7 +1,7 @@
 export ZSH=/Users/hugh/.oh-my-zsh
 
 # Oh My ZSH
-plugins=(git vi-mode common-aliases npm nyan tmux)
+plugins=(git common-aliases npm nyan tmux)
 source $ZSH/oh-my-zsh.sh
 
 eval "$(rbenv init -)"
