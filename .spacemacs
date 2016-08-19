@@ -20,16 +20,17 @@ values."
      finance
      git
      github
-		 ;; haskell mode is currently broken :(
-     ;; haskell
+     haskell
      html
      ibuffer
      javascript
+     latex
      lua
      markdown
      org
      osx
      php
+     ranger
      react
      rust
      (shell :variables
@@ -41,6 +42,7 @@ values."
      syntax-checking
      version-control
      xkcd
+     yaml
 
      ;; private layers
      )
@@ -50,7 +52,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '('page-break-lines)
    dotspacemacs-delete-orphan-packages t))
 
 (defun dotspacemacs/init ()
@@ -129,6 +131,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   ;; don't run an interactive shell while setting path
   (setq exec-path-from-shell-arguments '("-l"))
+
+  (defalias #'projectile-go-function #'projectile-go)
   )
 
 (defun dotspacemacs/user-config ()
