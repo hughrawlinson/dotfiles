@@ -57,7 +57,7 @@ let g:ctrlp_cmd = 'CtrlP'
 set sessionoptions+=tabpages,globals
 
 set background=dark
-colorscheme solarized
+colorscheme seattle
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
@@ -80,7 +80,7 @@ let maplocalleader=","
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 if exists("&undodir")
-	set undodir=~/.vim/undo
+  set undodir=~/.vim/undo
 endif
 
 " Don’t create backups when editing files in certain directories
@@ -122,20 +122,20 @@ set title
 set showcmd
 " Use relative line numbers
 if exists("&relativenumber")
-	set relativenumber
-	au BufReadPost * set relativenumber
+  set relativenumber
+  au BufReadPost * set relativenumber
 endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=4
 
 " Automatic commands
 if has("autocmd")
-	" Enable file type detection
-	filetype on
-	" Treat .json files as .js
-	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-	" Treat .md files as Markdown
-	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+  " Enable file type detection
+  filetype on
+  " Treat .json files as .js
+  autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+  " Treat .md files as Markdown
+  autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 
   au VimEnter * RainbowParenthesesActivate
   au Syntax * RainbowParenthesesLoadRound
