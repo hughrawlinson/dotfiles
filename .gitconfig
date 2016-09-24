@@ -1,0 +1,5 @@
+[user]
+	email = hugh@spotify.com
+	name = Hugh Rawlinson
+[core]
+	excludesfile = /Users/hugh/.gitignore
