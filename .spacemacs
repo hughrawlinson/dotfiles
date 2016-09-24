@@ -27,6 +27,7 @@ values."
      latex
      lua
      markdown
+     octave
      org
      osx
      php
@@ -66,7 +67,7 @@ values."
    dotspacemacs-elpa-https t
    dotspacemacs-elpa-timeout 5
    dotspacemacs-check-for-update t
-   dotspacemacs-editing-style 'emacs
+   dotspacemacs-editing-style 'vim
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner 'nil
