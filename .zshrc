@@ -17,7 +17,9 @@ alias ghci="stack ghci"
 alias ghc="stack ghc"
 alias npm-exec='PATH=$(npm bin):$PATH'
 #alias ec="emacsclient --no-wait -c"
-alias e="emacsclient -t"
+#alias e="emacsclient -t"
+alias em="emacsclient -t"
+alias e="$EDITOR"
 alias ds='docker-machine start default && docker-machine env default'
 
 function loadenv() { cat .env | while read a; do export $a; done }

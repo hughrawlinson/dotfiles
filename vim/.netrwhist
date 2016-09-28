@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/hugh/Development/ghe.spotify.net/content/ingestion/spotify_content_ingestion_ci'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/hugh/Development/ghe.spotify.net/content/ingestion/spotify_content_ingestion'
 let g:netrw_dirhist_2='/Users/hugh/Development/ghe.spotify.net/content/ingestion'
 let g:netrw_dirhist_3='/Users/hugh/Development/ghe.spotify.net/content/ingestion/scripts'
-let g:netrw_dirhist_4='/Users/hugh/Development/ghe.spotify.net/content/ingestion/scripts/goalie'
-let g:netrw_dirhist_5='/Users/hugh/Development/ghe.spotify.net/content/ingestion'
-let g:netrw_dirhist_6='/Users/hugh/Development/ghe.spotify.net/content/ingestion/scripts'
-let g:netrw_dirhist_7='/Users/hugh/Development/ghe.spotify.net/content/ingestion/scripts/goalie'
-let g:netrw_dirhist_8='/Users/hugh/Development/github.com'
-let g:netrw_dirhist_9='/Users/hugh/Development/github.com/hugh'

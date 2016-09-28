@@ -65,6 +65,8 @@ let g:syntastic_style_warning_symbol = '💩'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+let g:notes_directories = ['~/Dropbox\ \(Personal\)/vim_notes']
+
 set sessionoptions+=tabpages,globals
 
 set background=dark

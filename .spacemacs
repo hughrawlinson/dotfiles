@@ -31,6 +31,7 @@ values."
      org
      osx
      php
+     python
      ranger
      react
      rust
