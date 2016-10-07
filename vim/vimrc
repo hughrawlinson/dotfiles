@@ -1,11 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set guifont=Fira\ Code:h12
-set guioptions-=e
-set guioptions-=L  "remove left-hand scroll bar
-set guioptions-=r
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -160,3 +155,9 @@ endif
 set shiftwidth=2
 set tabstop=2
 set expandtab
+
+set guifont=Fira\ Code:h12
+set macligatures
+set guioptions-=e
+set guioptions-=L  "remove left-hand scroll bar
+set guioptions-=r
