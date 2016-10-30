@@ -147,7 +147,7 @@ you should place your code here."
 
   (setq powerline-default-separator 'nil)
   ;; for some reason...
-  (spaceline-compile)
+  ;; (spaceline-compile)
 
   (setq company-emoji-insert-unicode t)
 

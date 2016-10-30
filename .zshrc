@@ -1,4 +1,4 @@
-export ZSH=/Users/hugh/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Oh My ZSH
 plugins=(git common-aliases npm nyan tmux)
