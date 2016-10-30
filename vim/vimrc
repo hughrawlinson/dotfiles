@@ -61,6 +61,7 @@ let g:syntastic_error_symbol = '❌'
 let g:syntastic_style_error_symbol = '⁉️'
 let g:syntastic_warning_symbol = '⚠️'
 let g:syntastic_style_warning_symbol = '💩'
+set emoji
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -108,7 +109,7 @@ set secure
 " Enable line numbers
 set number
 " Enable syntax highlighting
-syntax on
+syntax enable
 " Highlight current line
 set cursorline
 " Highlight searches
@@ -140,6 +141,12 @@ if exists("&relativenumber")
 endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=4
+" Show whitespace
+set list
+" Width ruler
+"set colorcolumn=121
+call matchadd('ColorColumn', '\%81v', 100)
+set path+=**
 
 " Automatic commands
 if has("autocmd")
@@ -149,6 +156,8 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
   " Treat .md files as Markdown
   autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+  " Automatically reload vimrc when saved
+  autocmd! bufwritepost .vimrc source %
 
   au VimEnter * RainbowParenthesesActivate
   au Syntax * RainbowParenthesesLoadRound
