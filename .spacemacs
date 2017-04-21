@@ -10,9 +10,13 @@ values."
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '(
+     javascript
      auto-completion
      better-defaults
      dash
+     c-c++
+     clojure
+     colors
      elm
      emacs-lisp
      emoji
@@ -21,6 +25,7 @@ values."
      git
      github
      haskell
+     helm
      html
      ibuffer
      javascript
@@ -34,6 +39,7 @@ values."
      python
      ranger
      react
+     ruby
      rust
      (shell :variables
             shell-default-shell 'eshell
@@ -71,11 +77,12 @@ values."
    dotspacemacs-editing-style 'vim
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
-   dotspacemacs-startup-banner 'nil
+   dotspacemacs-startup-banner 'official
    dotspacemacs-startup-lists '(recents projects)
    dotspacemacs-startup-recent-list-size 20
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(solarized-dark
+   dotspacemacs-themes '(sanityinc-tomorrow-night
+                         solarized-dark
                          solarized-light
                          )
    dotspacemacs-colorize-cursor-according-to-state t
@@ -107,12 +114,12 @@ values."
    dotspacemacs-which-key-delay 1.0
    dotspacemacs-which-key-position 'bottom
    dotspacemacs-loading-progress-bar t
-   dotspacemacs-fullscreen-at-startup t
+   dotspacemacs-fullscreen-at-startup nil
    dotspacemacs-fullscreen-use-non-native nil
    dotspacemacs-maximized-at-startup nil
    dotspacemacs-active-transparency 90
    dotspacemacs-inactive-transparency 90
-   dotspacemacs-mode-line-unicode-symbols t
+   dotspacemacs-mode-line-unicode-symbols nil
    dotspacemacs-smooth-scrolling t
    dotspacemacs-line-numbers 'relative
    dotspacemacs-smartparens-strict-mode nil
@@ -178,7 +185,7 @@ you should place your code here."
             (setq count (1+ count)) 
             (kill-buffer buffer)))
         (message "Killed %i dired buffer(s)." count))))
-
+  (setq clojure-enable-fancify-symbols t)
   ;; Try and make indentation work nicely
   (setq-default js2-basic-offset 2)
   (setq-default js-indent-level 2)
@@ -207,11 +214,19 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#d2ceda" "#f2241f" "#67b11d" "#b1951d" "#3a81c3" "#a31db1" "#21b8c7" "#655370"])
+ '(evil-want-Y-yank-to-eol t)
+ '(ns-use-native-fullscreen nil)
+ '(package-selected-packages
+   (quote
+    (color-theme-sanityinc-tomorrow define-word rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby rainbow-mode rainbow-identifiers color-identifiers-mode packed ws-butler web-mode use-package toc-org swift-mode spacemacs-theme pug-mode persp-mode orgit org org-plus-contrib org-download neotree live-py-mode ledger-mode intero info+ hide-comnt helm-projectile helm-flx helm-c-yasnippet helm-ag gitattributes-mode git-gutter-fringe expand-region evil-surround evil-mc evil-matchit evil-escape evil-anzu eshell-z drupal-mode clj-refactor cider clojure-mode cargo auto-complete auctex smartparens flycheck haskell-mode company request helm helm-core skewer-mode js2-mode simple-httpd magit magit-popup git-commit with-editor hydra yasnippet php-mode rust-mode yapfify yaml-mode xterm-color xkcd window-numbering which-key web-beautify volatile-highlights vi-tilde-fringe uuidgen toml-mode tagedit spaceline solarized-theme smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs ranger rainbow-delimiters racer queue quelpa pyvenv pytest pyenv-mode py-isort popwin pip-requirements phpunit phpcbf php-extras php-auto-yasnippets pcre2el pbcopy paredit paradox osx-trash osx-dictionary org-projectile org-present org-pomodoro org-bullets open-junk-file mwim multi-term move-text mmm-mode markdown-toc magit-gitflow magit-gh-pulls macrostep lua-mode lorem-ipsum livid-mode linum-relative link-hint less-css-mode launchctl json-mode js2-refactor js-doc inflections indent-guide ido-vertical-mode ibuffer-projectile hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-mode-manager helm-make helm-hoogle helm-gitignore helm-descbinds helm-dash helm-css-scss helm-company haskell-snippets google-translate golden-ratio gnuplot github-search github-clone github-browse-file gitconfig-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter gist gh-md flyspell-correct-helm flycheck-rust flycheck-pos-tip flycheck-ledger flycheck-haskell flycheck-elm flx-ido fill-column-indicator fancy-battery eyebrowse exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-ediff evil-args eshell-prompt-extras esh-help erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks emoji-cheat-sheet-plus emmet-mode elm-mode elisp-slime-nav edn dumb-jump disaster diminish diff-hl dash-at-point cython-mode company-web company-tern company-statistics company-ghci company-ghc company-emoji company-cabal company-c-headers company-auctex company-anaconda column-enforce-mode coffee-mode cmm-mode cmake-mode clojure-snippets clean-aindent-mode clang-format cider-eval-sexp-fu bind-key auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile async anzu aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(paradox-github-token t))
+  (add-to-list 'projectile-globally-ignored-directories "node_modules")
+  
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+ )

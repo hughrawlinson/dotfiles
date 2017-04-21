@@ -18,8 +18,10 @@ Plugin 'EinfachToll/DidYouMean'
 Plugin 'gcmt/taboo.vim'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'mattn/gist-vim'
 Plugin 'mhinz/vim-signify'
+Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/vimproc.vim'
@@ -61,12 +63,32 @@ let g:syntastic_error_symbol = '❌'
 let g:syntastic_style_error_symbol = '⁉️'
 let g:syntastic_warning_symbol = '⚠️'
 let g:syntastic_style_warning_symbol = '💩'
-set emoji
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 let g:notes_directories = ['~/Dropbox\ \(Personal\)/vim_notes']
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
+set foldmethod=syntax
+set conceallevel=1
+map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
+
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒"
+let g:javascript_conceal_noarg_arrow_function = "🞅"
+let g:javascript_conceal_underscore_arrow_function = "🞅"
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
 set sessionoptions+=tabpages,globals
 
@@ -151,7 +173,7 @@ set path+=**
 " Automatic commands
 if has("autocmd")
   " Enable file type detection
-  filetype on
+  filetype plugin indent on
   " Treat .json files as .js
   autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
   " Treat .md files as Markdown
@@ -168,3 +190,5 @@ endif
 set shiftwidth=2
 set tabstop=2
 set expandtab
+
+map <leader>edc      mzO<ESC>j:s/,/,\r/g<CR>(%i<CR><ESC>%a<CR><ESC>(%=%:%s/ *$//g<CR>:noh<CR>'zkdd

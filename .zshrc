@@ -1,7 +1,26 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Oh My ZSH
-plugins=(git common-aliases npm nyan tmux)
+plugins=(
+  brew
+  common-aliases
+  compleat
+  dirpersist
+  docker
+  git
+  git-fast
+  git-extras
+  last-working-dir
+  npm
+  nyan
+  osx
+  pyenv
+  python
+  ssh-agent
+  sudo
+  tmux
+  tmuxinator
+  )
 source $ZSH/oh-my-zsh.sh
 
 eval "$(rbenv init -)"

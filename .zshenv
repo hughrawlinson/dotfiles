@@ -15,10 +15,5 @@ export LESS="-erX"
 export ZSH_THEME="agnoster"
 export ENABLE_CORRECTION="true"
 export COMPLETION_WAITING_DOTS="true"
-# Not joking, this is how to detect if you're running in emacs exec-path-from-shell
-# if [[ $- == *i* && "$PAGER" != "cat" ]]; then; export ZSH_TMUX_AUTOSTART="true"; fi;
 export DEFAULT_USER="hugh"
-#export TERM="xterm-256color"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 export PKG_CONFIG_PATH=/usr/local/Cellar/libffi/3.0.13/lib/pkgconfig/:/usr/local/lib/pkgconfig:/usr/local/lib
