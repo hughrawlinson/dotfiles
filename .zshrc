@@ -42,3 +42,7 @@ alias e="$EDITOR"
 alias ds='docker-machine start default && docker-machine env default'
 
 function loadenv() { cat .env | while read a; do export $a; done }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
