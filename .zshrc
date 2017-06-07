@@ -8,11 +8,10 @@ eval "$(rbenv init -)"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 [ -f /Users/hugh/.travis/travis.sh ] && source /Users/hugh/.travis/travis.sh
 source ~/.cargo/env
-# Using Docker for Mac now, this shouldn't be required.
-# if which docker-machine > /dev/null; then eval "$(docker-machine env default)"; fi
+eval $(opam config env)
 
 alias tmux="tmux -2"
-alias spm='npm --registry http://npm-registry.spotify.net --userconfig ~/.spmrc --always-auth=true'
+alias spm='npm --registry https://artifactory.spotify.net/artifactory/api/npm/virtual-npm --userconfig ~/.spmrc --always-auth=true'
 alias ghci="stack ghci"
 alias ghc="stack ghc"
 alias npm-exec='PATH=$(npm bin):$PATH'
@@ -23,3 +22,4 @@ alias e="$EDITOR"
 alias ds='docker-machine start default && docker-machine env default'
 
 function loadenv() { cat .env | while read a; do export $a; done }
+autoload -U compinit; compinit

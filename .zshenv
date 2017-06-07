@@ -7,6 +7,9 @@ export PATH="$PATH:/usr/local/heroku/bin"
 export PATH="$PATH:$HOME/.bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
+eval $(opam config env)
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+source ~/.cargo/env
 export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_GB.UTF-8
 export EDITOR='mvim --remote-silent'

@@ -10,6 +10,11 @@ values."
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '(
+     javascript
+     javascript
+     html
+     html
+     html
      auto-completion
      better-defaults
      dash
@@ -20,6 +25,7 @@ values."
      finance
      git
      github
+     groovy
      haskell
      html
      ibuffer
@@ -215,3 +221,35 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(paradox-github-token t)
+   (setq-default
+    standard-indent 2
+    tab-width 2
+    indent-tabs-mode nil
+    js-indent-level 2
+    js2-basic-offset 2
+    js2-strict-semi-warning nil
+    js2-missing-semi-one-line-override nil
+    web-mode-markup-indent-offset 2
+    web-mode-css-indent-offset 2
+    web-mode-code-indent-offset 2
+    web-mode-indent-style 2
+    )
+   (custom-set-faces
+    ;; custom-set-faces was added by Custom.
+    ;; If you edit it by hand, you could mess it up, so be careful.
+    ;; Your init file should contain only one such instance.
+    ;; If there is more than one, they won't work right.
+    '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+    '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+   )
