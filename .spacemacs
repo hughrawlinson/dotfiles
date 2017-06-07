@@ -11,6 +11,7 @@ values."
    dotspacemacs-configuration-layers
    '(
      javascript
+     html
      auto-completion
      better-defaults
      dash
@@ -24,6 +25,7 @@ values."
      finance
      git
      github
+     groovy
      haskell
      helm
      html
@@ -223,10 +225,43 @@ you should place your code here."
     (color-theme-sanityinc-tomorrow define-word rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby rainbow-mode rainbow-identifiers color-identifiers-mode packed ws-butler web-mode use-package toc-org swift-mode spacemacs-theme pug-mode persp-mode orgit org org-plus-contrib org-download neotree live-py-mode ledger-mode intero info+ hide-comnt helm-projectile helm-flx helm-c-yasnippet helm-ag gitattributes-mode git-gutter-fringe expand-region evil-surround evil-mc evil-matchit evil-escape evil-anzu eshell-z drupal-mode clj-refactor cider clojure-mode cargo auto-complete auctex smartparens flycheck haskell-mode company request helm helm-core skewer-mode js2-mode simple-httpd magit magit-popup git-commit with-editor hydra yasnippet php-mode rust-mode yapfify yaml-mode xterm-color xkcd window-numbering which-key web-beautify volatile-highlights vi-tilde-fringe uuidgen toml-mode tagedit spaceline solarized-theme smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs ranger rainbow-delimiters racer queue quelpa pyvenv pytest pyenv-mode py-isort popwin pip-requirements phpunit phpcbf php-extras php-auto-yasnippets pcre2el pbcopy paredit paradox osx-trash osx-dictionary org-projectile org-present org-pomodoro org-bullets open-junk-file mwim multi-term move-text mmm-mode markdown-toc magit-gitflow magit-gh-pulls macrostep lua-mode lorem-ipsum livid-mode linum-relative link-hint less-css-mode launchctl json-mode js2-refactor js-doc inflections indent-guide ido-vertical-mode ibuffer-projectile hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-mode-manager helm-make helm-hoogle helm-gitignore helm-descbinds helm-dash helm-css-scss helm-company haskell-snippets google-translate golden-ratio gnuplot github-search github-clone github-browse-file gitconfig-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter gist gh-md flyspell-correct-helm flycheck-rust flycheck-pos-tip flycheck-ledger flycheck-haskell flycheck-elm flx-ido fill-column-indicator fancy-battery eyebrowse exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-ediff evil-args eshell-prompt-extras esh-help erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks emoji-cheat-sheet-plus emmet-mode elm-mode elisp-slime-nav edn dumb-jump disaster diminish diff-hl dash-at-point cython-mode company-web company-tern company-statistics company-ghci company-ghc company-emoji company-cabal company-c-headers company-auctex company-anaconda column-enforce-mode coffee-mode cmm-mode cmake-mode clojure-snippets clean-aindent-mode clang-format cider-eval-sexp-fu bind-key auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile async anzu aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(paradox-github-token t))
   (add-to-list 'projectile-globally-ignored-directories "node_modules")
-  
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(paradox-github-token t)
+   (setq-default
+    standard-indent 2
+    tab-width 2
+    indent-tabs-mode nil
+    js-indent-level 2
+    js2-basic-offset 2
+    js2-strict-semi-warning nil
+    js2-missing-semi-one-line-override nil
+    web-mode-markup-indent-offset 2
+    web-mode-css-indent-offset 2
+    web-mode-code-indent-offset 2
+    web-mode-indent-style 2
+    )
+   (custom-set-faces
+    ;; custom-set-faces was added by Custom.
+    ;; If you edit it by hand, you could mess it up, so be careful.
+    ;; Your init file should contain only one such instance.
+    ;; If there is more than one, they won't work right.
+    '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+    '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+   )
