@@ -1,3 +1,5 @@
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:/Users/hugh/Library/Android/sdk/platform-tools"
 export PATH="$PATH:/Users/hugh/Library/Android/sdk/build-tools"
