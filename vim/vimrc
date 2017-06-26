@@ -1,7 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set guifont=Source\ Code\ Pro\ for\ Powerline\ Light:h11
+set guifont=Source\ Code\ Pro\ Light:h11
 " set noantialias
 set guioptions-=e
 set guioptions-=L  "remove left-hand scroll bar
