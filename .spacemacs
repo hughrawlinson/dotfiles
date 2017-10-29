@@ -16,6 +16,7 @@ values."
      auto-completion
      better-defaults
      dash
+     docker
      c-c++
      clojure
      colors
@@ -191,6 +192,7 @@ you should place your code here."
   ;; Try and make indentation work nicely
   (setq-default js2-basic-offset 2)
   (setq-default js-indent-level 2)
+  (setq-default css-indent-offset 2)
   (defun my-web-mode-hook ()
     "Hooks for Web mode."
     (setq web-mode-markup-indent-offset 2)
