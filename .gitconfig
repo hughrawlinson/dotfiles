@@ -3,3 +3,6 @@
 	name = Hugh Rawlinson
 [core]
 	excludesfile = /Users/hugh/.gitignore
+	editor = /usr/bin/nano
+[rebase]
+	autosquash = true
