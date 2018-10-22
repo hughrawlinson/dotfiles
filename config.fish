@@ -7,8 +7,13 @@ if test -d '/Users/hugh/google-cloud-sdk'
   bass source '/Users/hugh/google-cloud-sdk/completion.bash.inc'
 end
 
-alias spm='npm --registry https://artifactory.spotify.net/artifactory/api/npm/virtual-npm --userconfig ~/.spmrc --always-auth=true'
+alias spm='npm --userconfig ~/.spmrc'
 alias tcp='tmux save-buffer - | pbcopy'
+
+alias e='emacsclient -t'
+alias ec='emacsclient -c'
+alias vim='emacsclient -t'
+alias vi='emacsclient -t'
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
