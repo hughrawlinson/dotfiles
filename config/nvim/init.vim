@@ -6,32 +6,30 @@ set guifont=Source\ Code\ Pro\ Light:h11
 set guioptions-=e
 set guioptions-=L  "remove left-hand scroll bar
 set guioptions-=r
+set shell=/bin/bash
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'bling/vim-bufferline'
-Plugin 'csexton/trailertrash.vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'gcmt/taboo.vim'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'maxmellon/vim-jsx-pretty'
-Plugin 'pangloss/vim-javascript'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-liquid'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-misc'
-Plugin 'vim-scripts/Emmet.vim'
-Plugin 'wakatime/vim-wakatime'
+call plug#begin('~/.vim/plugged')
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+Plug 'bling/vim-bufferline'
+Plug 'csexton/trailertrash.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'gcmt/taboo.vim'
+Plug 'gmarik/Vundle.vim'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-liquid'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/Emmet.vim'
+Plug 'wakatime/vim-wakatime'
+
+call plug#end()
 
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -69,7 +67,6 @@ let g:vim_jsx_pretty_colorful_config = 1 " default 0
 set sessionoptions+=tabpages,globals
 
 set background=dark
-colorscheme seattle
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
@@ -77,8 +74,6 @@ set clipboard=unnamed
 set autochdir
 " Enhance command-line completion
 set wildmenu
-" Allow cursor keys in insert mode
-set esckeys
 " Allow backspace in insert mode
 set backspace=indent,eol,start
 " Optimize for fast terminal connections
