@@ -19,10 +19,10 @@ if not functions -q fisher
     fish -c fisher
 end
 
-# set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-# for file in $XDG_CONFIG_HOME/fish/conf.d/*.fish
-#     builtin source $file 2>/dev/null
-# end
+set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+for file in $XDG_CONFIG_HOME/fish/conf.d/*.fish
+    builtin source $file 2>/dev/null
+end
 
 eval (python -m virtualfish)
 
@@ -32,4 +32,3 @@ eval (python -m virtualfish)
 status --is-interactive; and source (rbenv init -|psub)
 
 set PATH $HOME/.cargo/bin $PATH
-set PATH $HOME/.local/bin $PATH
