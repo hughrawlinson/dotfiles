@@ -32,3 +32,4 @@ eval (python -m virtualfish)
 status --is-interactive; and source (rbenv init -|psub)
 
 set PATH $HOME/.cargo/bin $PATH
+set GPG_TTY (tty)
