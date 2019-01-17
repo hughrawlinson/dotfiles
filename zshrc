@@ -43,3 +43,7 @@ function loadenv() { cat .env | while read a; do export $a; done }
 
 autoload -U compinit; compinit
 bindkey '^R' history-incremental-search-backward
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -6,32 +6,9 @@ set guifont=Source\ Code\ Pro\ Light:h11
 set guioptions-=e
 set guioptions-=L  "remove left-hand scroll bar
 set guioptions-=r
+set shell=/bin/bash
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'bling/vim-bufferline'
-Plugin 'csexton/trailertrash.vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'gcmt/taboo.vim'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'maxmellon/vim-jsx-pretty'
-Plugin 'pangloss/vim-javascript'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-liquid'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-misc'
-Plugin 'vim-scripts/Emmet.vim'
-Plugin 'wakatime/vim-wakatime'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+source $HOME/.config/nvim/plugins.vim
 
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -39,58 +16,50 @@ let g:airline#extensions#taboo#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 0
-let g:airline_left_sep=''
-let g:airline_powerline_fonts = 0
-let g:airline_right_sep=''
-let g:airline_theme='wombat'
+let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+
+let g:deoplete#enable_at_startup = 1
 
 let g:jsx_ext_required = 0
 
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_flow = 1
 set foldmethod=syntax
-set conceallevel=1
-map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
+set foldlevelstart=20
 
-let g:javascript_conceal_function             = "ƒ"
-let g:javascript_conceal_null                 = "ø"
-let g:javascript_conceal_this                 = "@"
-let g:javascript_conceal_return               = "⇚"
-let g:javascript_conceal_undefined            = "¿"
-let g:javascript_conceal_NaN                  = "ℕ"
-let g:javascript_conceal_prototype            = "¶"
-let g:javascript_conceal_static               = "•"
-let g:javascript_conceal_super                = "Ω"
-let g:javascript_conceal_arrow_function       = "⇒"
-let g:javascript_conceal_noarg_arrow_function = "🞅"
-let g:javascript_conceal_underscore_arrow_function = "🞅"
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
 set sessionoptions+=tabpages,globals
 
 set background=dark
-colorscheme seattle
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
+
 " Automatically change vim directory to that of focused file
 set autochdir
+
 " Enhance command-line completion
 set wildmenu
-" Allow cursor keys in insert mode
-set esckeys
+
 " Allow backspace in insert mode
 set backspace=indent,eol,start
+
 " Optimize for fast terminal connections
 set ttyfast
+
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
+
 " Change mapleader
 let mapleader=","
 let maplocalleader=","
 " Centralize backups, swapfiles and undo history
+"
 set backupdir=~/.vim/backups
+
 set directory=~/.vim/swaps
+
 if exists("&undodir")
   set undodir=~/.vim/undo
 endif
