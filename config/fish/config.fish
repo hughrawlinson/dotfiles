@@ -1,3 +1,4 @@
+set -x LANG 'en_GB'
 source ~/.config/fish/functions/nvm.fish
 
 if test -d '/Users/hugh/google-cloud-sdk'
