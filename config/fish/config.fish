@@ -33,3 +33,13 @@ status --is-interactive; and source (rbenv init -|psub)
 
 set PATH $HOME/.cargo/bin $PATH
 set GPG_TTY (tty)
+
+function p
+  if test -e ./package-lock.json
+    npm $argv
+  else if test -e ./yarn.lock
+    yarn $argv
+  else
+    echo "You haven't used either npm or yarn in this project yet, or this isn't a node directory"
+  end
+end
