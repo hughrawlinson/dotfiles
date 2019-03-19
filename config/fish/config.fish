@@ -1,5 +1,9 @@
 set -x LANG 'en_GB'
-source ~/.config/fish/functions/nvm.fish
+set fish_greeting
+
+if test -e '$HOME/.config/fish/functions/nvm.fish'
+  source ~/.config/fish/functions/nvm.fish
+end
 
 if test -d '/Users/hugh/google-cloud-sdk'
   bass source '/Users/hugh/google-cloud-sdk/path.bash.inc'
@@ -25,14 +29,19 @@ for file in $XDG_CONFIG_HOME/fish/conf.d/*.fish
     builtin source $file 2>/dev/null
 end
 
+if test -d '$HOME/linuxbrew'
+  set PATH /home/linuxbrew/.linuxbrew/bin $PATH
+end
+
 eval (python -m virtualfish)
 
 # status --is-interactive; and source (rbenv init -|psub)set -g fish_user_paths "/usr/local/opt/llvm/bin" $fish_user_paths
-
 # status --is-interactive; and . (rbenv init -|psub)
-status --is-interactive; and source (rbenv init -|psub)
+# status --is-interactive; and source (rbenv init -|psub)
 
-set PATH $HOME/.cargo/bin $PATH
+if test -d '$HOME/.cargo/bin'
+  set PATH $HOME/.cargo/bin $PATH
+end
 set GPG_TTY (tty)
 
 function p
