@@ -132,3 +132,15 @@ bar {
   status_command i3blocks
   position top
 }
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# make mouse fast enough
+exec xinput set-prop "DLL0665:01 06CB:76AD Touchpad" "libinput Accel Speed" 0.9

@@ -6,6 +6,9 @@ Plug 'bling/vim-bufferline'
 " Delete unnecessary whitespace
 Plug 'csexton/trailertrash.vim'
 
+" Fish Script support
+Plug 'dag/vim-fish'
+
 " Tab manager
 Plug 'gcmt/taboo.vim'
 

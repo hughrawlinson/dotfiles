@@ -16,6 +16,7 @@ let g:airline#extensions#taboo#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 0
+let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
