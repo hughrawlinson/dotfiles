@@ -73,3 +73,8 @@ function p
         echo "You haven't used either npm or yarn in this project yet, or this isn't a node directory"
     end
 end
+
+# if setxkbmap, swap caps and esc
+if test -n (which setxkbmap)
+    setxkbmap -option caps:swapescape
+end
