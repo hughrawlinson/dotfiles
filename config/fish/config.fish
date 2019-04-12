@@ -1,5 +1,9 @@
 set -g -x LANG "en_GB"
 
+if test -Z $EDITOR
+    set -g -x EDITOR "nvim"
+end
+
 function fish_greeting
     pwd
 end
@@ -11,6 +15,7 @@ abbr e 'emacsclient -t'
 abbr ec 'emacsclient -c'
 abbr vim 'nvim'
 abbr vi 'nvim'
+abbr tree 'tree -I node_modules'
 
 # Load fish configs
 set -q XDG_CONFIG_HOME
@@ -77,4 +82,25 @@ end
 # if setxkbmap, swap caps and esc
 if test -n (which setxkbmap)
     setxkbmap -option caps:swapescape
+end
+
+# Function for editing the current command in $EDITOR
+function edit_cmd --description 'Input command in external editor'
+    set -l f (mktemp /tmp/fish.cmd.XXXXXXXX)
+    if test -n "$f"
+        set -l p (commandline -C)
+        commandline -b > $f
+        eval "$EDITOR -c 'set ft=fish' $f"
+        commandline -r (more $f)
+        commandline -C $p
+        command rm $f
+    end
+end
+
+# Keybinding for editing the current command in $EDITOR
+bind -k f4 edit_cmd; commandline -f execute
+
+# Make sure to have user scripts in path
+if not contains "$HOME/.local/bin" $PATH
+    set PATH "$HOME/.local/bin" $PATH
 end
