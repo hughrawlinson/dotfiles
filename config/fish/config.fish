@@ -1,6 +1,6 @@
 set -g -x LANG "en_GB"
 
-if test -Z $EDITOR
+if test -z "$EDITOR"
     set -g -x EDITOR "nvim"
 end
 
@@ -80,8 +80,10 @@ function p
 end
 
 # if setxkbmap, swap caps and esc
-if test -n (which setxkbmap)
-    setxkbmap -option caps:swapescape
+if test "Darwin" != (uname -a | cut -d' ' -f1)
+  if test -n (which setxkbmap)
+      setxkbmap -option caps:swapescape
+  end
 end
 
 # Function for editing the current command in $EDITOR
@@ -100,7 +102,11 @@ end
 # Keybinding for editing the current command in $EDITOR
 bind -k f4 edit_cmd; commandline -f execute
 
+# Keybinding to refresh fish config
+bind -k f5 eval "source $HOME/.config/fish/config.fish"
+
 # Make sure to have user scripts in path
 if not contains "$HOME/.local/bin" $PATH
     set PATH "$HOME/.local/bin" $PATH
 end
+
