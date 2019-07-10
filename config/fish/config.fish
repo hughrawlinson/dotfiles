@@ -56,6 +56,10 @@ if test -d "$HOME/.cargo/bin"
     set -g PATH $HOME/.cargo/bin $PATH
 end
 
+# if type -f go;
+#     set -g PATH (go env GOPATH);
+# end;
+
 # If we have pyenv installed, add to path for python dev
 if test -d "$HOME/.pyenv"
     status --is-interactive

@@ -12,3 +12,6 @@ node_modules
 *.log
 .env
 
+andreenv
+.python-version
+local_config.yaml
