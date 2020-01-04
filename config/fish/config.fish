@@ -1,5 +1,8 @@
 set -g -x LANG "en_GB"
 
+# https://github.com/pyenv/pyenv/issues/688
+set -g -x GIT_INTERNAL_GETTEXT_TEST_FALLBACKS 1
+
 if test -z "$EDITOR"
     set -g -x EDITOR "nvim"
 end
