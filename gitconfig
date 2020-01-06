@@ -74,3 +74,7 @@
   prompt = false
 [difftool "icdiff"]
   cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
+[cinnabar]
+	version-check = 1573604139
+	helper = /Users/hugh/.mozbuild/git-cinnabar/git-cinnabar-helper
+	fsck = 1573605116

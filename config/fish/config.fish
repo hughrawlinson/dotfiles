@@ -117,3 +117,12 @@ if not contains "$HOME/.local/bin" $PATH
     set PATH "$HOME/.local/bin" $PATH
 end
 
+set JAVA_VERSION "1.8"
+set JAVA_HOME (/usr/libexec/java_home -v $JAVA_VERSION)
+set JAVACMD "$JAVA_HOME/bin/java"
+set -x GPG_TTY (tty)
+
+status --is-interactive; and nvm use default
+
+status --is-interactive; and pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source

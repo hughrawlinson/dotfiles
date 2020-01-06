@@ -11,7 +11,9 @@ node_modules
 *.pyc
 *.log
 .env
+*.iml
 
 andreenv
 .python-version
 local_config.yaml
+.idea
