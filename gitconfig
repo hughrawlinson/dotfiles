@@ -4,7 +4,7 @@
   signingkey = 9DF45AF7012226831AC251289C1AC9F8BCFC89C9
 
 [core]
-  excludesfile = /Users/hugh/.gitignore
+  excludesfile = ~/.gitignore
 
 [rebase]
   autosquash = true
