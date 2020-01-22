@@ -130,4 +130,4 @@ if test -f /usr/libexec/java_home
     set JAVACMD "$JAVA_HOME/bin/java"
 end
 
-set -x GPG_TTY (tty)
+set -x GPG_TTY (tty)set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
