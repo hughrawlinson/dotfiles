@@ -91,9 +91,12 @@ function p
     end
 end
 
-# if setxkbmap, swap caps and esc
+# Mac specific setup
 if test \("Darwin" != (uname -a | cut -d' ' -f1)\) -a \( -f setxkbmap \)
-    setxkbmap -option caps:swapescape
+  setxkbmap -option caps:swapescape
+else
+  # let me repeat my keys!!!
+  defaults write -g ApplePressAndHoldEnabled -bool false
 end
 
 # Function for editing the current command in $EDITOR
