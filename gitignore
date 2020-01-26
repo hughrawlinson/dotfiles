@@ -6,6 +6,7 @@ vim/.netrwhist
 .DS_Store
 xcuserdata
 node_modules
+.yarn
 *.swp
 .#*
 *.pyc
