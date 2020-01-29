@@ -18,3 +18,4 @@ andreenv
 .python-version
 local_config.yaml
 .idea
+.metals

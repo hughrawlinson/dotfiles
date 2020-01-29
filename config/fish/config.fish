@@ -15,15 +15,6 @@ abbr vim 'nvim'
 abbr vi 'nvim'
 abbr tree 'tree -I node_modules'
 
-### Fisher is behaving badly and is getting a time out
-# Fisher plugin manager for fish shell
-# if not functions -q fisher
-#     set -q XDG_CONFIG_HOME
-#     or set XDG_CONFIG_HOME ~/.config
-#     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-#     fish -c fisher
-# end
-
 ### Time to try Fundle. Eww...
 if not functions -q fundle
     eval (curl -sfL https://git.io/fundle-install)
@@ -31,17 +22,14 @@ end
 
 fundle plugin 'edc/bass'
 fundle plugin 'tuvistavie/fish-ssh-agent'
-fundle plugin 'jorgebucaran/fish-nvm'
+fundle plugin 'brigand/fast-nvm-fish'
 fundle init
+
+nvm use default
 
 # If we have linuxbrew installed, add to path
 if test -d "/home/linuxbrew"
     set PATH /home/linuxbrew/.linuxbrew/bin $PATH
-end
-
-# If we have nvm installed, add to path
-if test -e '$HOME/.config/fish/functions/nvm.fish'
-    source ~/.config/fish/functions/nvm.fish
 end
 
 # If we have Google Cloud SDK installed on Mac, source
@@ -125,12 +113,15 @@ if not contains "$HOME/.local/bin" $PATH
     set PATH "$HOME/.local/bin" $PATH
 end
 
-nvm use default
-
 if test -f /usr/libexec/java_home
     set JAVA_VERSION "1.8"
     set JAVA_HOME (/usr/libexec/java_home -v $JAVA_VERSION)
     set JAVACMD "$JAVA_HOME/bin/java"
+
+    set PATH $HOME/.jenv/bin $PATH
+    status --is-interactive; and source (jenv init -|psub)
 end
 
-set -x GPG_TTY (tty)set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+set -x GPG_TTY (tty)
+set PATH "/usr/local/sbin" $PATH
+
