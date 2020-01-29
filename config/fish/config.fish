@@ -3,7 +3,6 @@ if test -z "$EDITOR"
 end
 
 function fish_greeting
-    pwd
 end
 
 abbr spm 'npm --userconfig ~/.spmrc'
@@ -68,36 +67,12 @@ end
 # Required for GPG signing
 set -gx GPG_TTY (tty)
 
-# Run yarn or npm depending on what the project already uses
-function p
-    if test -e ./package-lock.json
-        npm $argv
-    else if test -e ./yarn.lock
-        yarn $argv
-    else
-        echo "You haven't used either npm or yarn in this project yet, or this isn't a node directory"
-    end
-end
-
 # Mac specific setup
 if test \("Darwin" != (uname -a | cut -d' ' -f1)\) -a \( -f setxkbmap \)
   setxkbmap -option caps:swapescape
 else
   # let me repeat my keys!!!
   defaults write -g ApplePressAndHoldEnabled -bool false
-end
-
-# Function for editing the current command in $EDITOR
-function edit_cmd --description 'Input command in external editor'
-    set -l f (mktemp /tmp/fish.cmd.XXXXXXXX)
-    if test -n "$f"
-        set -l p (commandline -C)
-        commandline -b > $f
-        eval "$EDITOR -c 'set ft=fish' $f"
-        commandline -r (more $f)
-        commandline -C $p
-        command rm $f
-    end
 end
 
 if status --is-interactive
