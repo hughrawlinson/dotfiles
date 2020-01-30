@@ -13,8 +13,8 @@ abbr ec 'emacsclient -c'
 abbr vim 'nvim'
 abbr vi 'nvim'
 abbr tree 'tree -I node_modules'
+abbr lah 'ls -lah'
 
-### Time to try Fundle. Eww...
 if not functions -q fundle
     eval (curl -sfL https://git.io/fundle-install)
 end
