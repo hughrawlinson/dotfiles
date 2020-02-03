@@ -14,6 +14,7 @@ abbr vim 'nvim'
 abbr vi 'nvim'
 abbr tree 'tree -I node_modules'
 abbr lah 'ls -lah'
+abbr glo 'git log --oneline'
 
 if not functions -q fundle
     eval (curl -sfL https://git.io/fundle-install)
