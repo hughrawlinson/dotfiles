@@ -20,3 +20,5 @@ local_config.yaml
 .idea
 .metals
 .pnp.js
+secrets.json
+.vscode

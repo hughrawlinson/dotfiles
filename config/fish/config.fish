@@ -101,3 +101,6 @@ end
 set -x GPG_TTY (tty)
 set PATH "/usr/local/sbin" $PATH
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/hugh/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/hugh/Downloads/google-cloud-sdk/path.fish.inc'; end
