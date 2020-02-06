@@ -68,14 +68,6 @@ end
 # Required for GPG signing
 set -gx GPG_TTY (tty)
 
-# Mac specific setup
-if test \("Darwin" != (uname -a | cut -d' ' -f1)\) -a \( -f setxkbmap \)
-  setxkbmap -option caps:swapescape
-else
-  # let me repeat my keys!!!
-  defaults write -g ApplePressAndHoldEnabled -bool false
-end
-
 if status --is-interactive
     bind -k f4 edit_cmd; commandline -f execute
     # if setxkbmap, swap caps and esc
@@ -83,6 +75,8 @@ if status --is-interactive
         if test -n (which setxkbmap)
             setxkbmap -option caps:swapescape
         end
+    else
+      defaults write -g ApplePressAndHoldEnabled -bool false
     end
     # Keybinding to refresh fish config
     bind -k f5 eval "source $HOME/.config/fish/config.fish"
