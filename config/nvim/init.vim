@@ -145,3 +145,9 @@ if has("gui_running")
   set guioptions-=L  "remove left-hand scroll bar
   set guioptions-=r
 endif
+
+function Wrap()
+  let s:line = getline(".")
+  " setline(".", join(split(s:line, /.{80}/),'\n'))
+  echo split(s:line, /.{80}/)
+endfunction

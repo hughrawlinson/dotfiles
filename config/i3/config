@@ -152,3 +152,4 @@ exec --no-startup-id pasystray
 
 # background
 exec feh --bg-fill "$HOME/Dropbox/wallpaper.jpg"
+

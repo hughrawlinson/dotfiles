@@ -77,9 +77,13 @@ else
 end
 
 if status --is-interactive
-    # Keybinding for editing the current command in $EDITOR
     bind -k f4 edit_cmd; commandline -f execute
-
+    # if setxkbmap, swap caps and esc
+    if test "Darwin" != (uname -a | cut -d' ' -f1)
+        if test -n (which setxkbmap)
+            setxkbmap -option caps:swapescape
+        end
+    end
     # Keybinding to refresh fish config
     bind -k f5 eval "source $HOME/.config/fish/config.fish"
 end
