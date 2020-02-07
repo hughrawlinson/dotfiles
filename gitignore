@@ -13,6 +13,7 @@ node_modules
 *.log
 .env
 *.iml
+.tox
 
 andreenv
 .python-version
