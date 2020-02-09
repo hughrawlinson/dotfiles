@@ -72,7 +72,7 @@ if status --is-interactive
     bind -k f4 edit_cmd; commandline -f execute
     # if setxkbmap, swap caps and esc
     if test "Darwin" != (uname -a | cut -d' ' -f1)
-        if test -n (which setxkbmap)
+        if type -q setxkbmap
             setxkbmap -option caps:swapescape
         end
     else
