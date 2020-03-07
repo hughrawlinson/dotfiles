@@ -155,6 +155,6 @@ exec --no-startup-id pasystray
 exec feh --bg-fill "$HOME/Dropbox/wallpaper.jpg"
 hide_edge_borders both
 new_window 1pixel
-default_border none
-border none
+# default_border none
+# border none
 
