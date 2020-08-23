@@ -24,6 +24,8 @@ let g:airline_solarized_bg='dark'
 let g:deoplete#enable_at_startup = 1
 
 let g:jsx_ext_required = 0
+" let g:python_host_prog = '$HOME/.pyenv/shims/python'
+" let g:python3_host_prog = '$HOME/.pyenv/shims/python3'
 
 set foldmethod=syntax
 set foldlevelstart=20

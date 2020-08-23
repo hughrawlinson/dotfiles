@@ -36,7 +36,7 @@ fundle plugin 'tuvistavie/fish-ssh-agent'
 fundle plugin 'brigand/fast-nvm-fish'
 fundle init
 
-nvm use default
+nvm use default >> /dev/null
 
 # If we have linuxbrew installed, add to path
 if test -d "/home/linuxbrew"
@@ -73,7 +73,6 @@ if test -d "$HOME/.pyenv"
         source (pyenv init -|psub)
         source (pyenv virtualenv-init -|psub)
     end
-    eval (python -m virtualfish)
 end
 
 # Required for GPG signing
@@ -83,9 +82,9 @@ if status --is-interactive
     bind -k f4 edit_cmd; commandline -f execute
     # if setxkbmap, swap caps and esc
     if test "Darwin" != (uname -a | cut -d' ' -f1)
-        if type -q setxkbmap
-            setxkbmap -option caps:swapescape
-        end
+    #     if type -q setxkbmap
+    #         setxkbmap -option caps:swapescape
+    #     end
     else
       defaults write -g ApplePressAndHoldEnabled -bool false
     end
@@ -112,4 +111,4 @@ set PATH "/usr/local/sbin" $PATH
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/hugh/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/hugh/Downloads/google-cloud-sdk/path.fish.inc'; end
+if [ -f '/home/hugh/google-cloud-sdk/path.fish.inc' ]; . '/home/hugh/google-cloud-sdk/path.fish.inc'; end
