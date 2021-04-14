@@ -57,7 +57,7 @@ Plug 'Shougo/echodoc.vim'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 " Language Support
 " JavaScript
