@@ -65,18 +65,28 @@
   # https://git-scm.com/docs/git-config#git-config-transferfsckObjects
   # via https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
 
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
 
-# A nice little github-like colorful, split diff right in the console.
-# via http://owen.cymru/github-style-diff-in-terminal-with-icdiff/
-[diff]
-  tool = icdiff
-[difftool]
-  prompt = false
-[difftool "icdiff"]
-  cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+  commit-declaration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-declaration-style = none
+
 [cinnabar]
   version-check = 1573604139
   helper = /Users/hugh/.mozbuild/git-cinnabar/git-cinnabar-helper
   fsck = 1573605116
+
 [init]
   defaultBranch = main
