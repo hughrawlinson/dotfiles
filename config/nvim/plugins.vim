@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " Show list of plugins in statusline
 Plug 'bling/vim-bufferline'

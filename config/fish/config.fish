@@ -2,6 +2,10 @@ if test -z "$EDITOR"
     set -gx EDITOR "code"
 end
 
+if test -z "$GITEDITOR"
+    set -gx GITEDITOR "nvim"
+end
+
 set FZF_TMUX_HEIGHT 100%
 
 if not functions -q fundle
