@@ -7,7 +7,7 @@ you. If they are, go wild.
 
 1. Install [rcm](https://github.com/thoughtbot/rcm)
 2. Clone this repo to `~/.dotfiles`
-3. Run `rcup -v -d docs`
+3. Run `rcup -v -x docs`
 
 ## Other things you have to install
 
