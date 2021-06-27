@@ -4,7 +4,7 @@
   signingkey = 6559E3E864CD2A257E649F021938ADF3C65A7CD3
 
 [core]
-  excludesfile = "~/.config/git/.ignore"
+  excludesfile = "~/.config/git/ignore"
   editor = code --wait
 
 [rebase]
