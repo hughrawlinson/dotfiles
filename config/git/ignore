@@ -19,3 +19,4 @@ local_config.yaml
 secrets.json
 .vscode
 coverage
+*.code-workspace

@@ -1,40 +1,40 @@
 [user]
-  email = hughr2005@gmail.com
-  name = Hugh Rawlinson
-  signingkey = 6559E3E864CD2A257E649F021938ADF3C65A7CD3
+  email = "hughr2005@gmail.com"
+  name = "Hugh Rawlinson"
+  signingkey = "6559E3E864CD2A257E649F021938ADF3C65A7CD3"
 
 [core]
   excludesfile = "~/.config/git/ignore"
-  editor = code --wait
+  editor = "code --wait"
 
 [rebase]
   autosquash = true
 
 [alias]
-  prune = fetch --prune
+  prune = "fetch --prune"
   # Because I constantly forget how to do this
   # https://git-scm.com/docs/git-fetch#git-fetch--p
 
-  undo = reset --soft HEAD^
+  undo = "reset --soft HEAD^"
   # Not quite as common as an amend, but still common
   # https://git-scm.com/docs/git-reset#git-reset-emgitresetemltmodegtltcommitgt
 
-  stash-all = stash save --include-untracked
+  stash-all = "stash save --include-untracked"
   # We wanna grab those pesky un-added files!
   # https://git-scm.com/docs/git-stash
 
-  glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  glog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
   # No need for a GUI - a nice, colorful, graphical representation
   # https://git-scm.com/docs/git-log
   # via https://medium.com/@payload.dd/thanks-for-the-git-st-i-will-use-this-4da5839a21a4
 
 [merge]
-  ff = only
+  ff = "only"
   # I pretty much never mean to do a real merge, since I use a rebase workflow.
   # Note: this global option applies to all merges, including those done during a git pull
   # https://git-scm.com/docs/git-config#git-config-mergeff
 
-  conflictstyle = diff3
+  conflictstyle = "diff3"
   # Standard diff is two sets of final changes. This introduces the original text before each side's changes.
   # https://git-scm.com/docs/git-config#git-config-mergeconflictStyle
 
@@ -46,7 +46,7 @@
   template = "~/.config/git/commit"
 
 [push]
-  default = simple
+  default = "simple"
   # "push the current branch back to the branch whose changes are usually integrated into the current branch"
   # "refuse to push if the upstream branch’s name is different from the local one"
   # https://git-scm.com/docs/git-config#git-config-pushdefault
@@ -56,7 +56,7 @@
   # https://git-scm.com/docs/git-config#git-config-pushfollowTags
 
 [status]
-  showUntrackedFiles = all
+  showUntrackedFiles = "all"
   # Sometimes a newly-added folder, since it's only one line in git status, can slip under the radar.
   # https://git-scm.com/docs/git-config#git-config-statusshowUntrackedFiles
 
@@ -68,27 +68,29 @@
   # via https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
 
 [pager]
-  diff = delta
-  log = delta
-  reflog = delta
-  show = delta
+  # diff = delta
+  log = "delta"
+  reflog = "delta"
+  show = "delta"
 
 [interactive]
-  diffFilter = delta --color-only
+  diffFilter = "delta --color-only"
 
 [delta]
-  features = side-by-side line-numbers decorations
-  whitespace-error-style = 22 reverse
+  features = "side-by-side line-numbers decorations"
+  whitespace-error-style = "22 reverse"
 
-[delta "decorations"]
-  commit-declaration-style = bold yellow box ul
-  file-style = bold yellow ul
-  file-declaration-style = none
+[delta.decorations]
+  commit-declaration-style = "bold yellow box ul"
+  file-style = "bold yellow ul"
+  file-declaration-style = "none"
 
 [cinnabar]
   version-check = 1573604139
-  helper = /Users/hugh/.mozbuild/git-cinnabar/git-cinnabar-helper
+  helper = "/Users/hugh/.mozbuild/git-cinnabar/git-cinnabar-helper"
   fsck = 1573605116
 
 [init]
-  defaultBranch = main
+  defaultBranch = "main"
+[pull]
+	ff = "only"
