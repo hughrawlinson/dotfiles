@@ -14,8 +14,8 @@ window:
   opacity: 1.0
 
   dimensions:
-    columns: 100
-    lines: 26
+    columns: 170
+    lines: 39
   decorations:
     full
     # decorations: full, none, transparent, buttonless

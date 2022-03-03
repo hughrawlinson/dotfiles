@@ -53,3 +53,5 @@ if type -fq zoxide
 end
 
 nvm use default
+
+set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep"
