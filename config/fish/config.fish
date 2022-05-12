@@ -14,11 +14,9 @@ end
 
 fundle plugin edc/bass
 fundle plugin tuvistavie/fish-ssh-agent
-fundle plugin brigand/fast-nvm-fish
 fundle init
 
 if status --is-interactive
-    bind -k f4 edit_cmd
     commandline -f execute
     # if setxkbmap, swap caps and esc
     if test Darwin != (uname -a | cut -d' ' -f1)
@@ -28,30 +26,19 @@ if status --is-interactive
     else
         defaults write -g ApplePressAndHoldEnabled -bool false
     end
-    # Keybinding to refresh fish config
-    bind -k f5 eval "source $HOME/.config/fish/config.fish"
 end
 
 # Make sure to have user scripts in path
 fish_add_path "$HOME/.local/bin"
-
+fish_add_path /usr/local/sbin
 
 set -gx GPG_TTY (tty)
 set DISPLAY ":0"
-fish_add_path /usr/local/sbin
-alias emsdk_setup "source $HOME/emsdk/emsdk_env.fish"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '$HOME/google-cloud-sdk/path.fish.inc' ]
-    . '$HOME/google-cloud-sdk/path.fish.inc'
-end
-
-alias copy "xclip -selection clipboard"
 
 if type -fq zoxide
     zoxide init fish | source
 end
 
-nvm use default
+source ~/.asdf/asdf.fish
 
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep"
