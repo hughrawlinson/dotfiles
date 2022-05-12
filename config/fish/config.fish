@@ -8,16 +8,7 @@ end
 
 set FZF_TMUX_HEIGHT 100%
 
-if not functions -q fundle
-    eval (curl -sfL https://git.io/fundle-install)
-end
-
-fundle plugin edc/bass
-fundle plugin tuvistavie/fish-ssh-agent
-fundle init
-
 if status --is-interactive
-    commandline -f execute
     # if setxkbmap, swap caps and esc
     if test Darwin != (uname -a | cut -d' ' -f1)
         if type -q setxkbmap
@@ -34,10 +25,6 @@ fish_add_path /usr/local/sbin
 
 set -gx GPG_TTY (tty)
 set DISPLAY ":0"
-
-if type -fq zoxide
-    zoxide init fish | source
-end
 
 source ~/.asdf/asdf.fish
 
