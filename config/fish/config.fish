@@ -26,6 +26,4 @@ fish_add_path /usr/local/sbin
 set -gx GPG_TTY (tty)
 set DISPLAY ":0"
 
-source ~/.asdf/asdf.fish
-
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep"
