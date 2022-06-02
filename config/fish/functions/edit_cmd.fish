@@ -4,7 +4,7 @@ function edit_cmd --description 'Input command in external editor'
     if test -n "$f"
         set -l p (commandline -C)
         commandline -b >$f
-        eval "$EDITOR -c 'set ft=fish' $f"
+        eval "$GITEDITOR -c 'set ft=fish' $f"
         commandline -r (more $f)
         commandline -C $p
         command rm $f
