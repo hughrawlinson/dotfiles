@@ -20,3 +20,5 @@ secrets.json
 .vscode
 coverage
 *.code-workspace
+.venv
+
