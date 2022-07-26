@@ -9,3 +9,5 @@ abbr nl 'bat -n'
 alias copy "xclip -selection clipboard"
 alias vim "nvim"
 alias vi "nvim"
+
+alias rgfw "rg --max-columns 4000000000000"
