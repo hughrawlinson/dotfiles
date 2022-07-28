@@ -3,6 +3,7 @@ theme = "bogster"
 [editor]
 true-color = true
 line-number = "relative"
+auto-completion = true
 # rulers = [100]
 
 [editor.cursor-shape]
@@ -12,3 +13,7 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[editor.lsp]
+display-messages = true
+
