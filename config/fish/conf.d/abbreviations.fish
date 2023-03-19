@@ -10,7 +10,7 @@ abbr gd 'git diff'
 abbr nl 'bat -n'
 
 alias copy "xclip -selection clipboard"
-alias vim "nvim"
-alias vi "nvim"
+alias vim hx
+alias vi hx
 
-alias rgfw "rg --max-columns 4000000000000"
+alias rgfw "rg --max-columns=4000000000000"
