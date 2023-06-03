@@ -1,7 +1,5 @@
-nodejs 18.1.0
-rust 1.67.1
-python 3.10.4 3.9.13
-ruby 3.1.2
+nodejs 19
+rust   1.70.0
+python 3.11.3
+ruby   3.1.2
 golang 1.18.2
-bun 0.1.2
-lein 2.9.9

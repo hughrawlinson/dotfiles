@@ -14,3 +14,4 @@ alias vim hx
 alias vi hx
 
 alias rgfw "rg --max-columns=4000000000000"
+alias lh='exa -l -s modified --no-permissions --no-user'

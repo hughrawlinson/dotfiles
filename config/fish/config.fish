@@ -28,7 +28,9 @@ set DISPLAY ":0"
 
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep"
 
-set -gx ASDF_DIR "$HOME/.asdf"
-set -gx ASDF_DATA_DIR "/mnt/e/.hugh_asdf"
+# set -gx ASDF_DIR "$HOME/.asdf"
+# set -gx ASDF_DATA_DIR "/mnt/e/.hugh_asdf"
 
-# source $ASDF_DIR/asdf.fish
+# set -gx RTX_DATA_DIR "/mnt/e/.hugh_asdf"
+
+~/.local/bin/rtx activate fish | source
