@@ -11,9 +11,9 @@ set FZF_TMUX_HEIGHT 100%
 if status --is-interactive
     # if setxkbmap, swap caps and esc
     if test Darwin != (uname -a | cut -d' ' -f1)
-        if type -q setxkbmap
-            setxkbmap -option caps:swapescape
-        end
+#        if type -q setxkbmap
+#            setxkbmap -option caps:swapescape
+#        end
     else
         defaults write -g ApplePressAndHoldEnabled -bool false
     end
@@ -24,7 +24,7 @@ fish_add_path "$HOME/.local/bin"
 fish_add_path /usr/local/sbin
 
 set -gx GPG_TTY (tty)
-set DISPLAY ":0"
+set -gx TERMINAL alacritty
 
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep"
 

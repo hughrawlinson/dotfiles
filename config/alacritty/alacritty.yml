@@ -6,8 +6,8 @@ shell:
   program: /bin/fish
   args:
     - -l
-    - -c
-    - "tmux attach || tmux" # attaches the last used session
+    # - -c
+    # - "tmux attach || tmux" # attaches the last used session
     # - "tmux attach -d -t alacritty || tmux new -s alacritty" # attaches session named 'alacritty'
 
 window:

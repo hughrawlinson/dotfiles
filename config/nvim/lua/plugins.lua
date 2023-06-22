@@ -1,4 +1,7 @@
 require "paq" {
+  "savq/paq-nvim",
+  "neovim/nvim-lspconfig",
+
   -- Show list of plugins in statusline
   "bling/vim-bufferline",
 
