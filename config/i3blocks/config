@@ -33,13 +33,19 @@ markup=none
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
-[volume]
+# [volume]
 #label=v
 ##label=♪
 #instance=Master
 ##instance=PCM
 #interval=once
 #signal=10
+
+# CPU usage
+[cpu_usage]
+label=CPU
+interval=10
+# min_width=CPU: 100.00%
 
 # Memory usage
 #
@@ -48,10 +54,10 @@ markup=none
 label=MEM
 interval=30
 
-[memory]
-label=SWAP
-instance=swap
-interval=30
+# [memory]
+# label=SWAP
+# instance=swap
+# interval=30
 
 # Disk usage
 #
@@ -83,11 +89,6 @@ interval=30
 ##instance=eth0
 #interval=5
 
-# CPU usage
-[cpu_usage]
-label=CPU
-interval=10
-min_width=CPU: 100.00%
 
 [load_average]
 interval=10
@@ -97,12 +98,12 @@ interval=10
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=1
 
-# Temperature
-#
-# Support multiple chips, though lm-sensors.
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-[temperature]
-label=T
-interval=10
+## Temperature
+##
+## Support multiple chips, though lm-sensors.
+## The script may be called with -w and -c switches to specify thresholds,
+## see the script for details.
+#[temperature]
+#label=T
+#interval=10
 

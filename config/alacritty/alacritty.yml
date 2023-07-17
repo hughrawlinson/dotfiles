@@ -51,11 +51,11 @@ font:
     style: Bold
 
   italic:
-    family: "Iosevka Term"
+    family: "JetBrains Mono"
     # family: 'Iosevka Nerd Font Mono'
     style: Italic
 
-  size: 14.0
+  size: 11.0
 
   # Thin strokes = true on retina displays, Non-retina disp = false
   # use_thin_strokes: true
