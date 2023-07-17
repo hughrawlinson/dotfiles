@@ -1,7 +1,7 @@
 theme = "bogster"
 
 [editor]
-true-color = true
+# true-color = true
 line-number = "relative"
 auto-completion = true
 # rulers = [100]
