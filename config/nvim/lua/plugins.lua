@@ -8,7 +8,7 @@ require "paq" {
   -- Delete unnecessary whitespace
   "csexton/trailertrash.vim",
 
-  -- Fish Script support
+  -- -- Fish Script support
   "dag/vim-fish",
 
   -- Tab manager
@@ -40,9 +40,6 @@ require "paq" {
 
   -- HTML/JSX generation
   "vim-scripts/Emmet.vim",
-
-  -- Log my vim usage
-  "wakatime/vim-wakatime",
 
   -- Typescript Syntax
   "HerringtonDarkholme/yats.vim",
