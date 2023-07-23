@@ -1,7 +1,5 @@
 require "paq" {
-  "savq/paq-nvim",
-  "neovim/nvim-lspconfig",
-
+  { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
   -- Show list of plugins in statusline
   "bling/vim-bufferline",
 
@@ -38,41 +36,12 @@ require "paq" {
   -- Themes for the status bard
   "vim-airline/vim-airline-themes",
 
-  -- HTML/JSX generation
-  "vim-scripts/Emmet.vim",
-
-  -- Typescript Syntax
-  "HerringtonDarkholme/yats.vim",
-
-  -- {
-  --   "mhartington/nvim-typescript",
-  --   "run" = "./install.sh"
-  -- },
-
-  -- -- For async completion
-  -- {
-  --   "Shougo/deoplete.nvim",
-  --   "run" = function()
-  --     vim.cmd 'UpdateRemotePlugins'
-  --   end
-  -- },
-
-  -- For Denite features
-  "Shougo/denite.nvim",
-
   -- Display function signatures in command line
   "Shougo/echodoc.vim",
 
-  "/usr/local/opt/fzf",
   "junegunn/fzf.vim",
-  "dense-analysis/ale",
 
-  -- Language Support
-  -- JavaScript
-  "pangloss/vim-javascript",
-  "mxw/vim-jsx",
-  "rhysd/npm-debug-log.vim",
-  -- { "neovim/node-host", "run": "npm install" }
+  -- Template literal syntax highlighting in js/ts
   "cdata/vim-tagged-template",
 
   -- HTML
@@ -94,11 +63,9 @@ require "paq" {
   -- Snippet completion source for nvim-cmp
   "hrsh7th/cmp-vsnip",
 
-  -- Other usefull completion sources
+  -- Other useful completion sources
   "hrsh7th/cmp-path",
   "hrsh7th/cmp-buffer",
-
-  -- See hrsh7th"s other plugins for more completion sources!
 
   -- To enable more of the features of rust-analyzer, such as inlay hints and more!
   "simrat39/rust-tools.nvim"
