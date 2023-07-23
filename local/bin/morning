@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+wake_sleepy_monitor
+brightness 100

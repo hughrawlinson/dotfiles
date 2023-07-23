@@ -1,0 +1,7 @@
+#!/bin/sh
+
+monitor=HDMI-0
+
+xrandr --output $monitor --mode 2560x1440
+sleep 3
+xrandr --output $monitor --mode 3840x2160
