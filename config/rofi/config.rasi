@@ -155,7 +155,7 @@ configuration {
 }
 
 
-@theme "./nord.rasi"
+@theme "./colors/cyberpunk.rasi"
 
 listview {
   lines: 6;

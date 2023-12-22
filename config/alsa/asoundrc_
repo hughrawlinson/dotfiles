@@ -1,0 +1,11 @@
+pcm.!default {
+  type hw
+  card 1
+  buffer_size 8192
+  period_size 2048
+}
+
+ctl.!default {
+  type hw
+  card 1
+}

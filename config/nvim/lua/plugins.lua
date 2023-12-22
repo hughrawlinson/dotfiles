@@ -68,6 +68,12 @@ require "paq" {
   "hrsh7th/cmp-buffer",
 
   -- To enable more of the features of rust-analyzer, such as inlay hints and more!
-  "simrat39/rust-tools.nvim"
+  "simrat39/rust-tools.nvim",
+
+  -- nushell
+  "jose-elias-alvarez/null-ls.nvim",
+  "LhKipp/nvim-nu",
+  "nvim-lua/plenary.nvim"
 }
 
+require'nu'.setup{}
