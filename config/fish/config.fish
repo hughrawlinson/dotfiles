@@ -14,4 +14,4 @@ set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
 
-~/.local/bin/rtx activate fish | source
+~/.local/bin/mise activate fish | source
