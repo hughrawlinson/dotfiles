@@ -10,6 +10,7 @@ abbr gd 'git diff'
 abbr nl 'bat -n'
 
 alias copy "xclip -selection clipboard"
+alias hx helix
 alias vim hx
 alias vi hx
 

@@ -15,3 +15,7 @@ set -gx XDG_STATE_HOME "$HOME/.local/state"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
 
 ~/.local/bin/mise activate fish | source
+
+zoxide init fish | source
+
+set -gx DO_NOT_TRACK 1

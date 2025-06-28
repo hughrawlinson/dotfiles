@@ -1,335 +1,58 @@
+[general]
 live_config_reload = true
-# "window.dynamic_title" = false
+import = [
+  "keybindings.toml",
+  "colors.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+decorations = "none"
+opacity = 0.95
+startup_mode = "Windowed"
+dynamic_title = false
+dimensions = { columns = 170, lines = 39 }
+padding = { x = 10, y = 5 }
+
+[scrolling]
+# default
+# history = 10000
+
+[font]
+# default
+# size = 11.25
+normal = { family = "monospace", style = "Regular" }
+
+[terminal]
+shell = { args = ["-l"], program = "/bin/fish" }
 
 [bell]
 animation = "EaseOutQuint"
-color = "0xF44C8D"
-duration = 10
+color = "0x1BA6FA"
+duration = 300
 
-[colors]
-draw_bold_text_with_bright_colors = true
-
-[colors.bright]
-black = "#6D7070"
-blue = "#1BA6FA"
-cyan = "#73FBF1"
-green = "#B8E466"
-magenta = "#A578EA"
-red = "#FF4352"
-white = "#FEFEF8"
-yellow = "#FFD750"
-
-[colors.cursor]
-cursor = "#FF261E"
-text = "#FF261E"
-
-[colors.normal]
-black = "#0d0d0d"
-blue = "#1BA6FA"
-cyan = "#21DEEF"
-green = "#A0E521"
-magenta = "#8763B8"
-red = "#FF301B"
-white = "#EBEBEB"
-yellow = "#FFC620"
-
-[colors.primary]
-background = "#292C3E"
-foreground = "#EBEBEB"
+[selection]
+# default
+# save_to_clipboard = false
 
 [cursor]
 style = "Underline"
 thickness = 0.15
 unfocused_hollow = true
 
-[debug]
-log_level = "Warn"
-persistent_logging = false
-print_events = false
-render_timer = false
-
-[env]
-TERM = "xterm-256color"
-
-[font]
-size = 11.0
-
-[font.bold]
-family = "monospace"
-style = "Bold"
-
-[font.italic]
-family = "monospace"
-style = "Italic"
-
-[font.normal]
-family = "monospace"
-style = "Regular"
-
-[[keyboard.bindings]]
-key = "N"
-mods = "Command|Shift"
-
-[keyboard.bindings.command]
-args = ["new-session", "-d"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-key = "T"
-mods = "Command"
-
-[keyboard.bindings.command]
-args = ["new-window"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-action = "Paste"
-key = "V"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "Copy"
-key = "C"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "Quit"
-key = "W"
-mods = "Command"
-
-[[keyboard.bindings]]
-key = "Q"
-mods = "Alt|Shift"
-
-[keyboard.bindings.command]
-args = ["kill-window"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-key = "Q"
-mods = "Command"
-
-[keyboard.bindings.command]
-args = ["kill-pane"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-key = "S"
-mods = "Command"
-
-[keyboard.bindings.command]
-args = ["split-window", "-h"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-key = "B"
-mods = "Command"
-
-[keyboard.bindings.command]
-args = ["split-window", "-b"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-key = "Key1"
-mods = "Command"
-
-[keyboard.bindings.command]
-args = ["selected window", "-t", "1"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-key = "Key2"
-mods = "Command"
-
-[keyboard.bindings.command]
-args = ["selected window", "-t", "2"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-key = "Key3"
-mods = "Command"
-
-[keyboard.bindings.command]
-args = ["selected window", "-t", "3"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-key = "Key4"
-mods = "Command"
-
-[keyboard.bindings.command]
-args = ["selected window", "-t", "4"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-key = "Key5"
-mods = "Command"
-
-[keyboard.bindings.command]
-args = ["selected window", "-t", "5"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-key = "Key6"
-mods = "Command"
-
-[keyboard.bindings.command]
-args = ["selected window", "-t", "6"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-key = "Key7"
-mods = "Command"
-
-[keyboard.bindings.command]
-args = ["selected window", "-t", "7"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-key = "Key8"
-mods = "Command"
-
-[keyboard.bindings.command]
-args = ["selected window", "-t", "8"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-key = "Key9"
-mods = "Command"
-
-[keyboard.bindings.command]
-args = ["selected window", "-t", "9"]
-program = "/usr/local/bin/tmux"
-
-[[keyboard.bindings]]
-chars = "\u001B[3~"
-key = "Delete"
-
-[[keyboard.bindings]]
-chars = "©"
-key = "Key1"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "@"
-key = "Key2"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "£"
-key = "Key3"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "$"
-key = "Key4"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "∞"
-key = "Key5"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "§"
-key = "Key6"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "|"
-key = "Key7"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "["
-key = "Key8"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "]"
-key = "Key9"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "≈"
-key = "Key0"
-mods = "Alt"
-
-# [[keyboard.bindings]]
-# chars = "~"
-# key = "Grave"
-# mods = "Alt"
-
-[[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "Equals"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "ResetFontSize"
-key = "Key0"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "Equals"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "DecreaseFontSize"
-key = "Minus"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001Bb"
-key = "Left"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bf"
-key = "Right"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001BOH"
-key = "Left"
-mode = "AppCursor"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001BOF"
-key = "Right"
-mode = "AppCursor"
-mods = "Command"
-
 [mouse]
-hide_when_typing = false
+hide_when_typing = true
 
-# [mouse.double_click]
-# threshold = 300
+[keyboard]
+# see keybindings.toml
 
-# [mouse.triple_click]
-# threshold = 300
+[debug]
+# log_level = "Warn"
+# persistent_logging = true
+# print_events = true
+#ref_test = false
+# render_timer = true
 
-[scrolling]
-history = 1000
 
-[selection]
-save_to_clipboard = false
-
-[shell]
-args = ["-l"]
-program = "/bin/fish"
-
-[window]
-decorations = "full"
-opacity = 1.0
-startup_mode = "Windowed"
-
-[window.dimensions]
-columns = 170
-lines = 39
-
-[window.padding]
-x = 10
-y = 5

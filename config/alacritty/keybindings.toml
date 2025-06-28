@@ -1,0 +1,122 @@
+# tmux
+#
+# [[keyboard.bindings]]
+# key = "N"
+# mods = "Control|Shift"
+# command = { args = ["new-session", "-d"], program = "/usr/local/bin/tmux" }
+#
+# [[keyboard.bindings]]
+# key = "T"
+# mods = "Command"
+# command = { args = ["new-window"], program = "/usr/local/bin/tmux" }
+# 
+# [[keyboard.bindings]]
+# key = "Q"
+# mods = "Alt|Shift"
+# command = { args = ["kill-window"], program = "/usr/local/bin/tmux" }
+#
+# [[keyboard.bindings]]
+# key = "Q"
+# mods = "Command"
+# command = { args = ["kill-pane"], program = "/usr/local/bin/tmux" }
+#
+# [[keyboard.bindings]]
+# key = "S"
+# mods = "Command"
+# command = { args = ["split-window", "-h"], program = "/usr/local/bin/tmux" }
+#
+# [[keyboard.bindings]]
+# key = "B"
+# mods = "Command"
+# command = { args = ["split-window", "-b"], program = "/usr/local/bin/tmux" }
+#
+# [[keyboard.bindings]]
+# key = "Key1"
+# mods = "Command"
+# command = { args = ["selected window", "-t", "1"], program = "/usr/local/bin/tmux" }
+#
+# [[keyboard.bindings]]
+# key = "Key2"
+# mods = "Command"
+# command = { args = ["selected window", "-t", "2"], program = "/usr/local/bin/tmux" }
+#
+# [[keyboard.bindings]]
+# key = "Key3"
+# mods = "Command"
+# command = { args = ["selected window", "-t", "3"], program = "/usr/local/bin/tmux" }
+#
+# [[keyboard.bindings]]
+# key = "Key4"
+# mods = "Command"
+# command = { args = ["selected window", "-t", "4"], program = "/usr/local/bin/tmux" }
+#
+# [[keyboard.bindings]]
+# key = "Key5"
+# mods = "Command"
+# command = { args = ["selected window", "-t", "5"], program = "/usr/local/bin/tmux" }
+#
+# [[keyboard.bindings]]
+# key = "Key6"
+# mods = "Command"
+# command = { args = ["selected window", "-t", "6"], program = "/usr/local/bin/tmux" }
+#
+# [[keyboard.bindings]]
+# key = "Key7"
+# mods = "Command"
+# command = { args = ["selected window", "-t", "7"], program = "/usr/local/bin/tmux" }
+#
+# [[keyboard.bindings]]
+# key = "Key8"
+# mods = "Command"
+# command = { args = ["selected window", "-t", "8"], program = "/usr/local/bin/tmux" }
+#
+# [[keyboard.bindings]]
+# key = "Key9"
+# mods = "Command"
+# command = { args = ["selected window", "-t", "9"], program = "/usr/local/bin/tmux" }
+
+# clipboard
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001BOH"
+key = "Left"
+mode = "AppCursor"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001BOF"
+key = "Right"
+mode = "AppCursor"
+mods = "Command"
+
+
