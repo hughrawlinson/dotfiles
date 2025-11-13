@@ -5,7 +5,7 @@
 
 [core]
   excludesfile = "~/.config/git/ignore"
-  editor = "code --wait"
+  pager = "delta"
 
 [rebase]
   autosquash = true
@@ -34,7 +34,7 @@
   # Note: this global option applies to all merges, including those done during a git pull
   # https://git-scm.com/docs/git-config#git-config-mergeff
 
-  conflictstyle = "diff3"
+  conflictstyle = "zdiff3"
   # Standard diff is two sets of final changes. This introduces the original text before each side's changes.
   # https://git-scm.com/docs/git-config#git-config-mergeconflictStyle
 
@@ -70,7 +70,7 @@
   # via https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
 
 [pager]
-  # diff = delta
+  diff = "delta"
   log = "delta"
   reflog = "delta"
   show = "delta"
@@ -81,6 +81,7 @@
 [delta]
   features = "side-by-side line-numbers decorations"
   whitespace-error-style = "22 reverse"
+  navigate = true
 
 [delta.decorations]
   commit-declaration-style = "bold yellow box ul"
