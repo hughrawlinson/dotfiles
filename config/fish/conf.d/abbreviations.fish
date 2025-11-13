@@ -1,18 +1,11 @@
-abbr tcp 'tmux save-buffer - | pbcopy'
-abbr e 'emacsclient -t'
-abbr ec 'emacsclient -c'
-abbr tree 'tree -I node_modules'
-abbr lah 'ls -lah'
+abbr tree 'fd -I node_modules'
 abbr glo 'git log --oneline'
 abbr gcr 'git fetch && git rebase'
 abbr gs 'git status'
 abbr gd 'git diff'
 abbr nl 'bat -n'
-
-alias copy "xclip -selection clipboard"
-alias hx helix
-alias vim hx
-alias vi hx
+abbr ls eza
+abbr cat bat
 
 alias rgfw "rg --max-columns=4000000000000"
-alias lh='exa -l -s modified --no-permissions --no-user --git'
+alias lh='eza -l -s modified --no-permissions --no-user --git'
