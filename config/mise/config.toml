@@ -1,0 +1,12 @@
+[tools]
+bun = "latest"
+lazygit = "latest"
+lua = "latest"
+node = "latest"
+usage = "latest"
+uv = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = []
+python.uv_venv_auto = true
+experimental = true
