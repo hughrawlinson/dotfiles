@@ -18,4 +18,8 @@ mise activate fish | source
 
 zoxide init fish | source
 
+fzf --fish | source
+
+atuin init fish | source
+
 set -gx DO_NOT_TRACK 1

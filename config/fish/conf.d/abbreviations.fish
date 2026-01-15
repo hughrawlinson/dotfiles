@@ -6,6 +6,7 @@ abbr gd 'git diff'
 abbr nl 'bat -n'
 abbr ls eza
 abbr cat bat
+abbr lg lazygit
 
 alias rgfw "rg --max-columns=4000000000000"
 alias lh='eza -l -s modified --no-permissions --no-user --git'
