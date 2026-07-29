@@ -1,0 +1,6 @@
+[tools]
+"cargo:disktui" = "latest"
+llmfit = "latest"
+"pipx:archey4" = "latest"
+"pipx:mpremote" = "latest"
+"ubi:nnnkkk7/lazyactions" = "latest"
