@@ -1,10 +1,16 @@
 [tools]
 bun = "latest"
+helix = "latest"
 lazygit = "latest"
 lua = "latest"
 node = "latest"
+pipenv = "latest"
+"pipx:tildagon-cli" = "latest"
+python = "3.14"
 usage = "latest"
+# usage = "latest"
 uv = "latest"
+zig = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = []

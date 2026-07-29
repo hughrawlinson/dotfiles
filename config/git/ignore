@@ -21,4 +21,5 @@ secrets.json
 coverage
 *.code-workspace
 .venv
-
+copilot-instructions.md
+AGENTS.md

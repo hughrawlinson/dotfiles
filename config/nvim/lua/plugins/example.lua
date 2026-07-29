@@ -72,6 +72,8 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
+        -- disable ty (astral's type checker) — using pyright instead
+        ty = { enabled = false },
       },
     },
   },
